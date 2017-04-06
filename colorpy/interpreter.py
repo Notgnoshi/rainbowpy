@@ -28,21 +28,21 @@ def to_rgb(args):
         try:
             rgb = tuple(int(i) for i in args)
         except ValueError:
-            print('not a valid RGB value')
+            print('\tnot a valid RGB value')
     elif len(args) == 1:
         color = args[0]
         if color.startswith('#'):
             try:
                 rgb = hex_to_rgb(color)
             except ValueError:
-                print('not a valid hex color code {}'.format(color))
+                print('\tnot a valid hex color code {}'.format(color))
         else:
             try:
                 rgb = name_to_rgb(color)
             except ValueError:
-                print('not a valid named color {}'.format(color))
+                print('\tnot a valid named color {}'.format(color))
     else:
-        print('unrecognized color {}'.format(args))
+        print('\tunrecognized color {}'.format(args))
     return rgb
 
 
@@ -77,12 +77,21 @@ class Interpreter(object):
             print('\tunrecognized command.')
 
     def parse_set(self, args):
-        if args[0] in ['follow', 'off', 'dominant', 'demo' 'led']:
-            print('`set` subcommand `{}` not yet supported'.format(args[0]))
+        if args[0] in ['follow', 'dominant', 'demo', 'brightness']:
+            print('\t`set` subcommand `{}` not yet supported'.format(args[0]))
+        elif args[0] == 'off' or args[0] == 'clear':
+            self.current_color = (0, 0, 0)
+            self.set_color()
+        elif args[0] == 'led':
+            led = int(args[1])
+            color = to_rgb(args[2:])
+            command = Command(*color, False, led)
+            self.serial_device.write(command.Pack())
         else:
             self.current_color = to_rgb(args)
             self.set_color()
 
     def set_color(self):
+        print('\tsetting RGB value: {}'.format(self.current_color))
         c = Command(*self.current_color, solid=True, led=0)
         self.serial_device.write(c.Pack())

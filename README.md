@@ -51,3 +51,9 @@ Note the user you run the script as should be added to the `dialout` and `tty` g
     - hopefully not, all the business logic should go in the same place.
     - Need to worry about saturating the serial connection
 * Determine what the Arduino should expect and set that interface in stone.
+* pin 13 heartbeat
+* switch to HSV packets for easier transitions
+* clean up code.
+    - Divorce parsing commands and running them.
+    - Allow for running commands as commandline arguments.
+    - Better class structure
