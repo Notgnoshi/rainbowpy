@@ -33,7 +33,9 @@ Note the user you run the script as should be added to the `dialout` and `tty` g
 * Create a simple REPL interpreter for setting the color(s)
     - `set <color>`
     - `set dominant`
-    - `set dominant follow`
+    - `set follow dominant`
+    - `set follow music` - varies hues of whatever the current color is
+    - `set follow music tint <color>` - determines what color family to use
     - `set off`
     - `set demo`
     - `led <LED> <color>`
@@ -43,7 +45,7 @@ Note the user you run the script as should be added to the `dialout` and `tty` g
 * Finish figuring out the quickest way to get the dominant color of the screen. See [here](colors).
     - hopefully ignoring whites, grays, and blacks.
     - No need to be deterministic
-* `set dominant follow` should run in the background -- returning right back to the interpreter prompt.
+* `set follow dominant` and `set follow music` should run in the background -- returning right back to the interpreter prompt.
 * `import readline`
 * Will the transition code have to be implemented on the Arduino?
     - hopefully not, all the business logic should go in the same place.

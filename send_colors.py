@@ -26,7 +26,7 @@ def main(device, solid, led, red, green, blue):
 
 
 if __name__ == '__main__':
-    VERSION = 'RGBpy version 0.0.1 by Austin Gill'
+    VERSION = 'Colorpy version 0.0.1 by Austin Gill'
     DESCRIPTION = 'Controls an RGB LED strip via serial connection with an Arduino'
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('--version', '-v', action='version', version=VERSION)
