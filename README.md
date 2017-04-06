@@ -38,7 +38,7 @@ Note the user you run the script as should be added to the `dialout` and `tty` g
     - `set follow music tint <color>` - determines what color family to use
     - `set off`
     - `set demo`
-    - `led <LED> <color>`
+    - `set led <LED> <color>`
     - `transition <color>`
     - `transition led <LED> <color>`
     - `brightness <brightness>`
