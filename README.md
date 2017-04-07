@@ -1,4 +1,4 @@
-# colorpy
+# rainbowpy
 > Controls an RGB LED strip via serial.
 
 **In progress.**
