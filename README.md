@@ -37,11 +37,11 @@ Note the user you run the script as should be added to the `dialout` and `tty` g
     - `set follow music` - varies hues of whatever the current color is
     - `set follow music tint <color>` - determines what color family to use
     - `set off`
-    - `set demo`
     - `set led <LED> <color>`
     - `transition <color>`
     - `transition led <LED> <color>`
     - `brightness <brightness>`
+    - `set mode pulse | heartbeat | flicker | strobe | throb | solid`
 * Finish figuring out the quickest way to get the dominant color of the screen. See [here](colors).
     - hopefully ignoring whites, grays, and blacks.
     - No need to be deterministic
@@ -57,3 +57,7 @@ Note the user you run the script as should be added to the `dialout` and `tty` g
     - Divorce parsing commands and running them.
     - Allow for running commands as commandline arguments.
     - Better class structure
+* figure out how to accurately represent colors
+* Set mode in command packet. Implementation on Arduino.
+* Same with transitions. Immediate, linear fade, quadratic fade, linear "roll", quadratic "roll", dramatic like "Who Wants to be a Millionare".
+
