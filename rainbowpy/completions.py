@@ -1,7 +1,37 @@
-commands = [
+colors = [
+    'primary',
     'set',
-    'transition',
     'brightness',
+    'dominant',
+    'secondary',
+    'transition',
+    'correction',
+    'temperature',
+    'TypicalSMD5050',
+    'TypicalLEDStrip',
+    'Typical8mmPixel',
+    'TypicalPixelString',
+    'UncorrectedColor',
+    'Candle',
+    'Tungsten40W',
+    'Tungsten100W',
+    'Halogen',
+    'CarbonArc',
+    'HighNoonSun',
+    'DirectSunlight',
+    'OvercastSky',
+    'ClearBlueSky',
+    'WarmFluorescent',
+    'StandardFluorescent',
+    'CoolWhiteFluorescent',
+    'FullSpectrumFluorescent',
+    'GrowLightFluorescent',
+    'BlackLightFluorescent',
+    'MercuryVapor',
+    'SodiumVapor',
+    'MetalHalide',
+    'HighPressureSodium',
+    'UncorrectedTemperature',
     'IndianRed',
     'LightCoral',
     'Salmon',
@@ -154,7 +184,7 @@ commands = [
 
 
 def completer(text, state):
-    options = [x for x in commands if x.lower().startswith(text.lower())]
+    options = [x for x in colors if x.lower().startswith(text.lower())]
     try:
         return options[state]
     except IndexError:
