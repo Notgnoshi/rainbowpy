@@ -30,7 +30,7 @@ void loop()
         // we've got a packet, now figure out what to do with it
         interpret(packet);
     }
-    
+
     // FastLED.show();
 }
 
