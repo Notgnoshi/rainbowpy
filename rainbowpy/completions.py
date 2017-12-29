@@ -1,9 +1,8 @@
 colors = [
-    'primary',
     'set',
+    'color'
     'brightness',
     'dominant',
-    'secondary',
     'transition',
     'correction',
     'temperature',
@@ -77,7 +76,7 @@ colors = [
     'DarkOrchid',
     'DarkMagenta',
     'Purple',
-    'RebeccaPurple',
+    # 'RebeccaPurple',
     'Indigo',
     'MediumSlateBlue',
     'SlateBlue',
@@ -183,6 +182,7 @@ colors = [
 ]
 
 
+# TODO: Be more intelligent?
 def completer(text, state):
     options = [x for x in colors if x.lower().startswith(text.lower())]
     try:

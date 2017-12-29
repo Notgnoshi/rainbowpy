@@ -21,7 +21,7 @@ def main(device):
         except (KeyboardInterrupt, EOFError):
             print()
             break
-    ser.write(command_parser.parse('primary black'))
+    ser.write(command_parser.parse('color black'))
     ser.close()
 
 
