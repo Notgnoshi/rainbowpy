@@ -56,45 +56,29 @@ class Parser(object):
             return None
 
         # TODO: use a dictionary of keyword --> function mappings?
-        if root == 'set':
-            return self._set(tokens)
-        elif root == 'color':
+        if root == 'color':
             return self._color(self._to_color(tokens))
         elif root == 'dominant':
-            return self._dominant_color()
+            # return self._dominant_color()
+            return None
         elif root == 'brightness':
             return self._brightness(tokens)
+        elif root == 'correction':
+            return self._correction(tokens)
+        elif root == 'temperature':
+            return self._temperature(tokens)
         return None
 
-    def _set(self, tokens):
-        root = tokens.pop(0)
-        if root not in ['transition', 'mode', 'correction', 'temperature']:
-            print('\t`{}` is not a recognized `set` subcommand'.format(root))
-            return None
-
-        if root == 'correction':
-            return self._set_correction(tokens)
-        elif root == 'temperature':
-            return self._set_temperature(tokens)
-        elif root == 'mode':
-            print('\t`mode` not yet supported')
-            return None
-        elif root == 'transition':
-            print('\t`transition` not yet supported')
-            return None
-        else:
-            return None
-
-    def _set_correction(self, tokens):
+    def _correction(self, tokens):
         correction = tokens[0]
         try:
             c = self.CORRECTIONS.index(correction)
             return self.struct.pack(self.SET_COLOR_CORRECTION, c, 0, 0)
         except ValueError:
-            print('\tcorrection `{}` not found'.format(correction))
+            print('\tcolor correction `{}` not found'.format(correction))
             return None
 
-    def _set_temperature(self, tokens):
+    def _temperature(self, tokens):
         temp = tokens[0]
         try:
             t = self.TEMPERATURES.index(temp)
