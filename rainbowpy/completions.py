@@ -186,6 +186,7 @@ OPTIONS = {
     'color': COLORS,
     'correction': CORRECTIONS,
     'temperature': TEMPERATURES,
+    'brightness': [],
     'dominant': [],
     'alarm': ['set', 'remove'],
 }
