@@ -3,7 +3,7 @@ import webcolors
 
 
 class Parser(object):
-    _ROOT_KEYWORDS = ['set', 'color', 'dominant', 'brightness']
+    _ROOT_KEYWORDS = ['color', 'dominant', 'brightness', 'temperature', 'correction']
 
     TEMPERATURES = [
         'candle',
