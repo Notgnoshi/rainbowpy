@@ -26,8 +26,8 @@ Note the user that runs the script as should be added to the `dialout` and `tty`
 * `color <color>` Sets the color of the LED strip. To set the strip to red, use one of the following: `color red`, `color 255 0 0`, or `color #ff0000`. Note that Rainbowpy understands HTML5 named colors, except for RebeccaPurple.
 * `dominant` Sets the primary color of the LED strip to the dominant screen color. Not yet implemented.
 * `brightness <brightness>` Sets the LED strip brightness. `0..255`.
-* `set correction [TypicalSMD5050 | TypicalLEDStrip | Typical8mmPixel | TypicalPixelString | UncorrectedColor]` Sets the color correction of the LED strip.
-* `set temperature [Candle | Tungsten40W | Tungsten100W | Halogen | CarbonArc | HighNoonSun | DirectSunlight | OvercastSky | ClearBlueSky | WarmFluorescent | StandardFluorescent | CoolWhiteFluorescent | FullSpectrumFluorescent | GrowLightFluorescent | BlackLightFluorescent | MercuryVapor | SodiumVapor | MetalHalide | HighPressureSodium | UncorrectedTemperature]` Sets the LED color temperature.
+* `correction [TypicalSMD5050 | TypicalLEDStrip | Typical8mmPixel | TypicalPixelString | UncorrectedColor]` Sets the color correction of the LED strip.
+* `temperature [Candle | Tungsten40W | Tungsten100W | Halogen | CarbonArc | HighNoonSun | DirectSunlight | OvercastSky | ClearBlueSky | WarmFluorescent | StandardFluorescent | CoolWhiteFluorescent | FullSpectrumFluorescent | GrowLightFluorescent | BlackLightFluorescent | MercuryVapor | SodiumVapor | MetalHalide | HighPressureSodium | UncorrectedTemperature]` Sets the LED color temperature.
 
 Note the REPL supports basic tab completion of commands, but will attempt to do so unintelligently.
 
@@ -37,7 +37,6 @@ Note the REPL supports basic tab completion of commands, but will attempt to do 
     - Flash the light for several minutes.
     - Enable canceling the flashing?
     - Might require threads or other async methods. How to do this without blocking execution of new commands?
-* Only autocomplete valid commands. E.g. if using the `color` command, only autocomplete valid colors.
 * Clean up and modularize the parser. I'm ashamed of this current garbage.
 * Improve the Arduino controller...
     - Perhaps the packets could be text that the parser verifies and then passes on? This would simplify the parser, but I'm not sure I want to work with text on the Arduino.

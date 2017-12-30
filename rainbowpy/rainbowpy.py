@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import argparse
 import readline
 from parser import Parser
 import serial
-from completions import completer
+from completions import Completer, OPTIONS
 
-readline.set_completer(completer)
+readline.set_completer(Completer(OPTIONS).complete)
 readline.parse_and_bind("tab: complete")
 
 
