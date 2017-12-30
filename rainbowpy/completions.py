@@ -203,7 +203,7 @@ class Completer(object):
 
         # This is the first time for this text, so build a match list.
         if state == 0:
-            origline = readline.get_line_buffer()
+            origline = readline.get_line_buffer().lower()
             begin = readline.get_begidx()
             end = readline.get_endidx()
             being_completed = origline[begin:end]
@@ -225,7 +225,7 @@ class Completer(object):
                         # match options with portion of input
                         # being completed
                         self.current_candidates = [w for w in candidates
-                                                   if w.startswith(being_completed)]
+                                                   if w.lower().startswith(being_completed)]
                     else:
                         # matching empty string so use all candidates
                         self.current_candidates = candidates
